@@ -36,3 +36,4 @@ test("Verify My Profile detail", async({})=>{
   await dp.myProfileVerification()
 
 })
+

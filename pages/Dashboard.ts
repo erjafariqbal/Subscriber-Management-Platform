@@ -18,6 +18,17 @@ myProfile: Locator
 logout: Locator
 profile: Locator
 name: Locator
+dashboardlink: Locator
+employees: Locator
+installation:Locator
+reports: Locator
+balanceLink: Locator
+rfsArea: Locator
+partnerMetworkMap: Locator
+fiberToHome: Locator
+scoreboard: Locator
+
+
 
 
 
@@ -39,6 +50,15 @@ constructor(page: Page){
     this.logout = this.page.getByText("Logout", {exact: true})
     this.profile = this.page.locator("[class='profile-label']")
     this.name = this.page.getByText("Name", {exact:true})
+    this.dashboardlink = this.page.getByRole('link', { name: 'Dashboard' })
+    this.employees = this.page.getByRole('link', { name: 'Employees' })
+    this.installation = this.page.getByRole('link', { name: 'Installation' })
+    this.reports = this.page.getByRole('link', { name: 'Reports' })
+    this.balanceLink = this.page.getByRole('link', { name: 'Balance' })
+    this.rfsArea = this.page.getByText('RFS Area', { exact: true })
+    this.partnerMetworkMap = this.page.getByRole('link', { name: 'Partner Network Map' })
+    this.fiberToHome = this.page.getByRole('link', { name: 'Fiber To Home' })
+    this.scoreboard = this.page.getByRole('link', { name: 'Scoreboard' })
     
 
     
@@ -84,6 +104,18 @@ constructor(page: Page){
     await expect(this.profile).toBeVisible()
     await expect(this.name).toBeVisible()
 
+
+ }
+ async dashboardNavigation(){
+    await this.dashboardlink.click()
+    await expect(this.employees).toBeVisible()
+    await expect(this.installation).toBeVisible()
+    await expect(this.reports).toBeVisible()
+    await expect(this.balanceLink).toBeVisible()
+    await expect(this.rfsArea).toBeVisible()
+    await expect(this.partnerMetworkMap).toBeVisible()
+    await expect(this.fiberToHome).toBeVisible()
+    await expect(this.scoreboard).toBeVisible()
 
  }
 
