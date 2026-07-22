@@ -1,0 +1,33 @@
+{
+  "name": "procare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+    "full:qa": "set ENV =qa&& npx playwright test",
+    "full:prod": "set ENV =prod&& npx playwright test",
+    "test:qa": "set ENV =qa&& npx playwright test tests/loginPage.spec.ts",
+    "forgot:qa":"set ENV =qa&& npx playwright test tests/forgotPassword.spec.ts",
+    "test:prod": "set ENV =prod&& npx playwright test tests/loginPage.spec.ts",
+    "forgot:prod":"set ENV =prod&& npx playwright test tests/forgotPassword.spec.ts",
+    "dashboard:qa":"set ENV =qa&& npx playwright test tests/dashboard.spec.ts",
+    "dashboard:prod":"set ENV =prod&& npx playwright test tests/dashboard.spec.ts"
+
+
+    
+
+
+
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "dotenv": "^17.4.2"
+  }
+}
