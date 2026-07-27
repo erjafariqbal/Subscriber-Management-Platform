@@ -6,6 +6,20 @@ test( "test", async({page})=>{
     await page.getByPlaceholder("username/email").fill("testerpjafar.admin")
     await page.getByPlaceholder("your password").fill("123456s@S")
     await page.getByRole('button', {name: 'Log In'}).click()
+
+    await page.getByRole('link', { name: 'Reports' }).click()
+
+
+    
+     // await page.getByText("Subscribers", {exact: true}).click()
+    // await page.getByPlaceholder("UserID or #Number or @Address or &ReferenceCode").fill("testj95")
+    // await page.locator("div.hover-container").click()
+    // await page.getByRole("button",{name: ' Plan Renewal '}).click()
+
+    //  const selectPlan = page.locator("#plan")
+    //  await selectPlan.selectOption("5")
+    //  await page.getByRole("button",{name: " Proceed "} ).click()
+
     // await page.waitForLoadState("networkidle");
     // await expect(page.getByAltText("logo", {exact: true})).toBeVisible()
     // await expect(page.locator("div.partner-name")).toBeVisible()
@@ -19,6 +33,8 @@ test( "test", async({page})=>{
     await page.locator("[class='profile-name']").click()
     await page.getByText("Logout", {exact: true}).click()
     
+     
+     
 
 
    await page.waitForTimeout(3000)

@@ -11,7 +11,11 @@
     "test:prod": "set ENV =prod&& npx playwright test tests/loginPage.spec.ts",
     "forgot:prod": "set ENV =prod&& npx playwright test tests/forgotPassword.spec.ts",
     "dashboard:qa": "set ENV =qa&& npx playwright test tests/dashboard.spec.ts",
-    "dashboard:prod": "set ENV =prod&& npx playwright test tests/dashboard.spec.ts"
+    "dashboard:prod": "set ENV =prod&& npx playwright test tests/dashboard.spec.ts",
+    "subscriberPage:qa": "set ENV =qa&& npx playwright test tests/subscriberPage.spec.ts",
+    "subscriberPage:prod": "set ENV =prod&& npx playwright test tests/subscriberPage.spec.ts"
+
+
   },
   "keywords": [],
   "author": "",
