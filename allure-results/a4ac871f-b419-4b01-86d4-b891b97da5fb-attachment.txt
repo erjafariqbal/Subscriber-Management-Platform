@@ -1,0 +1,18 @@
+Plan from Excel: "REELTIME 95"
+Available options: [
+  'Select Plan',
+  ' REELTIME 995 ',
+  ' REELTIME 652 ',
+  ' REELTIME 845 ',
+  ' Reeltime 50 6M 3336 ',
+  ' Reeltime 75 6M 4056 ',
+  ' Reeltime 75 3M 2283 ',
+  ' Reeltime 100 3M 2688 ',
+  ' Reeltime 100 6M 4776 ',
+  ' Reeltime 50 12M 5844 ',
+  ' Reeltime 75 12M 7104 ',
+  ' Reeltime 100 12M 8364 ',
+  ' Reeltime Binge 50 6M 2940 ',
+  ' Reeltime Festive Bonanza ',
+  ' Reeltime 50 Diwali 2019 3 + 1 '
+]

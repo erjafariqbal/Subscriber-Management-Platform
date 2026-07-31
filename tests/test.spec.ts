@@ -1,84 +1,101 @@
-import {test, expect  } from "@playwright/test";
+// import {test, expect  } from "@playwright/test";
 
-test( "test", async({page})=>{
+// test( "test", async({page})=>{
 
-    await page.goto('https://procare-del-prerelease.north.excitel.in/')
-    await page.getByPlaceholder("username/email").fill("testerpjafar.admin")
-    await page.getByPlaceholder("your password").fill("123456s@S")
-    await page.getByRole('button', {name: 'Log In'}).click()
+//     await page.goto('https://procare-del-prerelease.north.excitel.in/')
+//     await page.getByPlaceholder("username/email").fill("testerpjafar.admin")
+//     await page.getByPlaceholder("your password").fill("123456s@S")
+//     await page.getByRole('button', {name: 'Log In'}).click()
 
-    await page.getByRole('link', { name: 'Reports' }).click()
+//     await page.getByRole('link', { name: 'Reports' }).click()
+    
 
 
     
-     // await page.getByText("Subscribers", {exact: true}).click()
-    // await page.getByPlaceholder("UserID or #Number or @Address or &ReferenceCode").fill("testj95")
-    // await page.locator("div.hover-container").click()
-    // await page.getByRole("button",{name: ' Plan Renewal '}).click()
+//      // await page.getByText("Subscribers", {exact: true}).click()
+//     // await page.getByPlaceholder("UserID or #Number or @Address or &ReferenceCode").fill("testj95")
+//     // await page.locator("div.hover-container").click()
+//     // await page.getByRole("button",{name: ' Plan Renewal '}).click()
 
-    //  const selectPlan = page.locator("#plan")
-    //  await selectPlan.selectOption("5")
-    //  await page.getByRole("button",{name: " Proceed "} ).click()
+//     //  const selectPlan = page.locator("#plan")
+//     //  await selectPlan.selectOption("5")
+//     //  await page.getByRole("button",{name: " Proceed "} ).click()
 
-    // await page.waitForLoadState("networkidle");
-    // await expect(page.getByAltText("logo", {exact: true})).toBeVisible()
-    // await expect(page.locator("div.partner-name")).toBeVisible()
-    // await expect(page.getByText(" Renewals ", {exact:true})).toBeVisible()
-    // await page.waitForTimeout(1000)
-    // await page.getByText("Taxation Details",{exact:true}).click()
-    // await expect(page.getByText("GST Number : ")).toBeVisible()    
-    // await expect(page.getByText("PAN No : ")).toBeVisible() 
-    // await expect(page.getByText("* contact Excitel for changes at")).toBeVisible()
-    // await page.getByText("TPL:").click()
-    await page.locator("[class='profile-name']").click()
-    await page.getByText("Logout", {exact: true}).click()
+//     // await page.waitForLoadState("networkidle");
+//     // await expect(page.getByAltText("logo", {exact: true})).toBeVisible()
+//     // await expect(page.locator("div.partner-name")).toBeVisible()
+//     // await expect(page.getByText(" Renewals ", {exact:true})).toBeVisible()
+//     // await page.waitForTimeout(1000)
+//     // await page.getByText("Taxation Details",{exact:true}).click()
+//     // await expect(page.getByText("GST Number : ")).toBeVisible()    
+//     // await expect(page.getByText("PAN No : ")).toBeVisible() 
+//     // await expect(page.getByText("* contact Excitel for changes at")).toBeVisible()
+//     // await page.getByText("TPL:").click()
+//     await page.locator("[class='profile-name']").click()
+//     await page.getByText("Logout", {exact: true}).click()
     
      
      
 
 
-   await page.waitForTimeout(3000)
-})
+//    await page.waitForTimeout(3000)
+// })
 
-test("Handling dropdown non select tag", async({page})=>{
+// test("Handling dropdown non select tag", async({page})=>{
 
-    await page.goto("https://demoqa.com/automation-practice-form")
+//     await page.goto("https://demoqa.com/automation-practice-form")
 
-    const stateDropdown = page.locator("#react-select-3-input")
-    await stateDropdown.click()
+//     const stateDropdown = page.locator("#react-select-3-input")
+//     await stateDropdown.click()
 
-    const stateSelect = page.getByText("Haryana", {exact: true})
+//     const stateSelect = page.getByText("Haryana", {exact: true})
 
-    await stateSelect.click()
+//     await stateSelect.click()
 
 
-    await page.waitForTimeout(2000)
+//     await page.waitForTimeout(2000)
 
    
 
+// })
+
+// // test("new Test Case", async ({page})=>{
+
+// //         await page.goto("https://demoqa.com/automation-practice-form")
+// //         const subjectdd = page.locator("##eact-select-2-placeholder")
+// //         await subjectdd.click()
+        
+// //         const subjectSelect = page.getByAltText("English", {exact: true})
+// //         await subjectSelect.click()
+
+// //         await page.waitForTimeout(2000)
+        
+
+
+
+
+// // })
+
+// // // test("Dropdown with Select Tag", async ({page})=>{
+
+// // // await page.goto("https://practice.expandtesting.com/dropdown")
+// // // await page.locator("#country").selectOption("AS")
+
+// // await page.waitForTimeout(2000)
+// // })
+
+
+
+import {test, expect, request  } from "@playwright/test";
+
+const url = "https://rahulshettyacademy.com/api/ecom/auth/login"
+const loginPayload = {userEmail: "qatester0878@gmail.com", userPassword: "123456a@A"}
+
+test ("API Testing for Login",async({request})=>{
+
+    const response = await request.post(url, {data: loginPayload})
+    console.log(response);
+    
+
 })
 
-// test("new Test Case", async ({page})=>{
-
-//         await page.goto("https://demoqa.com/automation-practice-form")
-//         const subjectdd = page.locator("##eact-select-2-placeholder")
-//         await subjectdd.click()
-        
-//         const subjectSelect = page.getByAltText("English", {exact: true})
-//         await subjectSelect.click()
-
-//         await page.waitForTimeout(2000)
-        
-
-
-
-
-// })
-
-// // test("Dropdown with Select Tag", async ({page})=>{
-
-// // await page.goto("https://practice.expandtesting.com/dropdown")
-// // await page.locator("#country").selectOption("AS")
-
-// await page.waitForTimeout(2000)
-// })

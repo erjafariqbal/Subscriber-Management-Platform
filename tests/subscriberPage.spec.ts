@@ -20,7 +20,7 @@ test.beforeEach(async({page})=>{
 
 })
 
-test("Navigate to Subscriber Moddule", async({})=>{
+test("renewal", async({})=>{
    await sp.launchSubscriberPage()
    await sp.searchUser(username)
    await sp.userRenewal
