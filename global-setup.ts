@@ -1,38 +1,22 @@
-import {chromium, FullConfig  } from "@playwright/test";
-
-import dotenv from 'dotenv'
-import path from 'path'
+import {chromium,FullConfig  } from "@playwright/test";
 
 
-const ENV_NAME = process.env.ENV_NAME || "qa";
+async function globalSetup(config: FullConfig) {
 
-dotenv.config({ path: path.resolve(__dirname, "testdata", `${ENV_NAME}.env`), });
+    const browser = await chromium.launch()
+    const context = await browser.newContext()
+    const page = await context.newPage()
 
-async function globalSetup(config:FullConfig) {
+    await page.goto("https://procare-del-prerelease.north.excitel.in/")
+    await page.getByPlaceholder("username/email").fill("testerpjafar.admin")
+    await page.getByPlaceholder("your password").fill("123456s@S")
+    await page.getByRole("button",{name: "Log In"}).click()
 
-   const browser = await chromium.launch()
-   const context = await browser.newContext()
-   const page = await context.newPage()
+    await page.waitForURL("https://procare-del-prerelease.north.excitel.in/")
 
-   await page.goto(process.env.BASE_URL!);
+    await page.context().storageState({path: "./auth.json"})
 
-  await page.getByPlaceholder("username/email").fill(process.env.USER_USERNAME!);
-  await page.getByPlaceholder("your password").fill(process.env.USER_PASSWORD!);
-  await page.getByRole("button", { name: "Log In" }).click();
+    await page.close()
 
-  await page.waitForURL(process.env.SP_URL!);
-
-  await context.storageState({path: `auth/${ENV_NAME}.json`,});
-
-
-  console.log("BASE_URL:", process.env.BASE_URL);
-console.log("SP_URL:", process.env.SP_URL);
-console.log("USER_USERNAME:", process.env.USER_USERNAME);
-console.log("USER_PASSWORD:", process.env.USER_PASSWORD);
-
-  await browser.close();
-
-    
 }
-
-export default globalSetup
+ export default globalSetup
