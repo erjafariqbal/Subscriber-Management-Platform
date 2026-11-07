@@ -16,7 +16,7 @@ async function globalSetup(config: FullConfig) {
 
     await page.context().storageState({path: "./auth.json"})
 
-    await page.close()
+    await browser.close()
 
 }
  export default globalSetup

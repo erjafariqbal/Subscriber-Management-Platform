@@ -41,23 +41,23 @@
 //    await page.waitForTimeout(3000)
 // })
 
-// test("Handling dropdown non select tag", async({page})=>{
+test("Handling dropdown non select tag", async({page})=>{
 
-//     await page.goto("https://demoqa.com/automation-practice-form")
+    await page.goto("https://demoqa.com/automation-practice-form")
 
-//     const stateDropdown = page.locator("#react-select-3-input")
-//     await stateDropdown.click()
+    const stateDropdown = page.locator("#react-select-3-input")
+    await stateDropdown.click()
 
-//     const stateSelect = page.getByText("Haryana", {exact: true})
+    const stateSelect = page.getByText("Haryana", {exact: true})
 
-//     await stateSelect.click()
+    await stateSelect.click()
 
 
-//     await page.waitForTimeout(2000)
+    await page.waitForTimeout(2000)
 
    
 
-// })
+})
 
 // // test("new Test Case", async ({page})=>{
 

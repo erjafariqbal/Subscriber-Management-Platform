@@ -22,7 +22,7 @@ dotenv.config({ path: path.resolve(__dirname, 'testdata',`${ENV_NAME}.env`) });
  */
 export default defineConfig({
 
-   globalSetup: require.resolve("./global-setup"),
+   globalSetup: "./global-setup.ts",
  
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -45,6 +45,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'on',
     headless: false,
+    baseURL: process.env.BASE_URL,
+    storageState: "./auth.json"
   },
 
   /* Configure projects for major browsers */
