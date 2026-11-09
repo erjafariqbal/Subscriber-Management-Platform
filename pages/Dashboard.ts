@@ -24,7 +24,7 @@ installation:Locator
 reports: Locator
 balanceLink: Locator
 rfsArea: Locator
-partnerMetworkMap: Locator
+partnerNetworkMap: Locator
 fiberToHome: Locator
 scoreboard: Locator
 
@@ -56,7 +56,7 @@ constructor(page: Page){
     this.reports = this.page.getByRole('link', { name: 'Reports' })
     this.balanceLink = this.page.getByRole('link', { name: 'Balance' })
     this.rfsArea = this.page.getByText('RFS Area', { exact: true })
-    this.partnerMetworkMap = this.page.getByRole('link', { name: 'Partner Network Map' })
+    this.partnerNetworkMap = this.page.getByRole('link', { name: 'Partner Network Map' })
     this.fiberToHome = this.page.getByRole('link', { name: 'Fiber To Home' })
     this.scoreboard = this.page.getByRole('link', { name: 'Scoreboard' })
     
@@ -113,7 +113,7 @@ constructor(page: Page){
     await expect(this.reports).toBeVisible()
     await expect(this.balanceLink).toBeVisible()
     await expect(this.rfsArea).toBeVisible()
-    await expect(this.partnerMetworkMap).toBeVisible()
+    await expect(this.partnerNetworkMap).toBeVisible()
     await expect(this.fiberToHome).toBeVisible()
     await expect(this.scoreboard).toBeVisible()
 

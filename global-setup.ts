@@ -1,22 +1,21 @@
-import {chromium,FullConfig  } from "@playwright/test";
+import { chromium } from "@playwright/test";
 
-
-async function globalSetup(config: FullConfig) {
+async function globalSetup() {
 
     const browser = await chromium.launch()
     const context = await browser.newContext()
     const page = await context.newPage()
 
-    await page.goto("https://procare-del-prerelease.north.excitel.in/")
-    await page.getByPlaceholder("username/email").fill("testerpjafar.admin")
-    await page.getByPlaceholder("your password").fill("123456s@S")
-    await page.getByRole("button",{name: "Log In"}).click()
+    await page.goto(process.env.BASE_URL!)
+    await page.getByPlaceholder("username/email").fill(process.env.USER_USERNAME!)
+    await page.getByPlaceholder("your password").fill(process.env.USER_PASSWORD!)
+    await page.getByRole("button", { name: "Log In" }).click()
 
-    await page.waitForURL("https://procare-del-prerelease.north.excitel.in/")
+    await page.waitForURL(process.env.BASE_URL!)
 
-    await page.context().storageState({path: "./auth.json"})
+    await context.storageState({ path: "./auth.json" })
 
     await browser.close()
 
 }
- export default globalSetup
+export default globalSetup

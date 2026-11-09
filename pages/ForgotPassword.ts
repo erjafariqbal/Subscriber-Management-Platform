@@ -5,7 +5,7 @@ export class ForgotPassword{
 page: Page
 forgotBtn : Locator
 pageLogo: Locator
-pageTittle: Locator
+pageTitle: Locator
 pageTextMessage: Locator
 userEmail: Locator
 sendEmailBtn: Locator
@@ -19,7 +19,7 @@ constructor(page: Page){
     this.page = page
     this.forgotBtn= this.page.getByText('Forgot password', {exact: true})
     this.pageLogo = this.page.locator("img.auth0-lock-header-logo")
-    this.pageTittle = this.page.getByTitle('Reset your password', {exact: true})
+    this.pageTitle = this.page.getByTitle('Reset your password', {exact: true})
     this.pageTextMessage = this.page.getByText("your email address. We")
     this.userEmail = this.page.getByPlaceholder("yours@example.com")
     this.sendEmailBtn = this.page.getByRole("button",{name: "Send email"})
@@ -44,17 +44,13 @@ async forgotPassword(userEmail: string){
 
 
 
-async verifyFogotPage(){
+async verifyForgotPage(){
     
-    //await expect(this.forgotBtn).toBeVisible()
     await expect(this.pageLogo).toBeVisible()
     await expect(this.userEmail).toBeVisible()
-    await expect(this.pageTittle).toBeVisible()
-    await expect(this.pageTextMessage).toBeVisible()
+    await expect(this.pageTitle).toBeVisible()
     await expect(this.pageTextMessage).toBeVisible()
     await expect(this.sendEmailBtn).toBeVisible()
-    //await expect(this.sendEmailNotification).toBeVisible()
-    //await expect(this.employeeUsername).toBeVisible()
 }
 
 

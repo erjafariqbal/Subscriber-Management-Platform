@@ -10,9 +10,9 @@ page : Page
 pageLogo: Locator
 employeeUsername: Locator
 employeePassword: Locator
-fogetButton: Locator
+forgotButton: Locator
 loginButton: Locator
-dashbordIdentifier: Locator
+dashboardIdentifier: Locator
 loginErrorText: Locator
 
 
@@ -23,8 +23,8 @@ constructor(page: Page){
     this.employeeUsername = this.page.getByPlaceholder("username/email")
     this.employeePassword = this.page.getByPlaceholder("your password")
     this.loginButton = this.page.getByRole('button', {name: 'Log In'})
-    this.dashbordIdentifier= this.page.getByText(' Dashboard ', {exact: true})
-    this.fogetButton = this.page.getByText('Forgot password', {exact: true})
+    this.dashboardIdentifier= this.page.getByText(' Dashboard ', {exact: true})
+    this.forgotButton = this.page.getByText('Forgot password', {exact: true})
     this.loginErrorText= this.page.getByText("Wrong username or password.", {exact: true})
 
 
@@ -48,7 +48,7 @@ constructor(page: Page){
         await expect(this.pageLogo).toBeVisible()
         await expect(this.employeeUsername).toBeVisible()
         await expect(this.employeePassword).toBeVisible()
-        await expect(this.fogetButton).toBeVisible()
+        await expect(this.forgotButton).toBeVisible()
         await expect(this.loginButton).toBeVisible()
 
 

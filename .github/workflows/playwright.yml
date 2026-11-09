@@ -8,6 +8,15 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      USER_USERNAME: ${{ secrets.USER_USERNAME }}
+      USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+      INCORRECT_USERNAME: ${{ secrets.INCORRECT_USERNAME }}
+      INCORRECT_PASSWORD: ${{ secrets.INCORRECT_PASSWORD }}
+      USER_EMAIL: ${{ secrets.USER_EMAIL }}
+      SUBSCRIBER_USERNAME: ${{ secrets.SUBSCRIBER_USERNAME }}
+      PLAN_NAME: ${{ secrets.PLAN_NAME }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
